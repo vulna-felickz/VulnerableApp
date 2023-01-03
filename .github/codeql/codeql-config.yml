@@ -1,3 +1,49 @@
-query-filters:
-  - include:
-      precision: low    
+#query-filters:
+#  - include:
+#      precision: low    
+
+#Config: https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/#examples-of-filtering-which-queries-are-run
+#Metadata: https://codeql.github.com/docs/writing-codeql-queries/metadata-for-codeql-queries/
+- description: ql/misc/suite-helpers/security-extended-selectors.yml + Include LOW precision queries
+- queries: .
+  from: codeql/suite-helpers
+- include:
+    kind:
+    - problem
+    - path-problem
+    precision:
+    - high
+    - very-high
+    tags contain:
+    - security
+- include:
+    kind:
+    - problem
+    - path-problem
+    precision:
+    - medium
+    - low
+    problem.severity:
+    - error
+    - warning
+    tags contain:
+    - security
+- include:
+    kind:
+    - diagnostic
+- include:
+    kind:
+    - metric
+    tags contain:
+    - summary
+- exclude:
+    deprecated: //
+- exclude:
+    query path:
+      - /^experimental\/.*/
+      - Metrics/Summaries/FrameworkCoverage.ql
+      - /Diagnostics/Internal/.*/
+- exclude:
+    tags contain:
+      - model-generator
+    
