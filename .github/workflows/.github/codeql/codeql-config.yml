@@ -1,0 +1,3 @@
+query-filters:
+  - include:
+      precision: low    
