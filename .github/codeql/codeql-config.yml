@@ -1,0 +1,17 @@
+name: "Custom CodeQL Config for lower precision"
+disable-default-queries: true
+
+#query-filters:
+#  - include:
+#      precision: low
+
+#Config: https://codeql.github.com/docs/codeql-cli/creating-codeql-query-suites/#examples-of-filtering-which-queries-are-run
+#Metadata: https://codeql.github.com/docs/writing-codeql-queries/metadata-for-codeql-queries/
+#- description: ql/misc/suite-helpers/security-extended-selectors.yml + Include LOW precision queries
+#- queries: .
+#  from: codeql/suite-helpers
+#- include:
+#    precision:
+#    - low
+#    tags contain:
+#    - security
