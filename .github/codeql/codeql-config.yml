@@ -12,6 +12,8 @@
     - problem
     - path-problem
     precision:
+    - low
+    - medium
     - high
     - very-high
     tags contain:
